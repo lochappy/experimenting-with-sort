@@ -91,9 +91,6 @@ def main():
                 break
             #if total_frames == 2:
             #    break
-    #cv2.destroyWindow("img")
-        
-    #cv2.destroyAllWindows()
     # When everything done, release the capture
     cap.release()
     cv2.destroyAllWindows()

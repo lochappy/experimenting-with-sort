@@ -20,17 +20,11 @@ Experimenting with [**sort**](https://github.com/abewley/sort) different classic
 - [`scikit-learn`](http://scikit-learn.org/stable/)
 - [`scikit-image`](http://scikit-image.org/download)
 - [`FilterPy`](https://github.com/rlabbe/filterpy)
+- `Opencv3.4`
 
 ## Usage:
+- Download [**Oxford Town Centre Dataset**](http://www.robots.ox.ac.uk/~lav/Research/Projects/2009bbenfold_headpose/Datasets/TownCentreXVID.avi) test video to root folder of this repository
 - To test with dlib tracker *(default is kalman)*:
 ```
-python main.py --dlib
-```
-- To save frames with tracking output: 
-```
-python main.py --save
-```
-- To disable online tracking display:
-```
-python main.py --NoDisplay
+python main_opencv.py --dlib
 ```
