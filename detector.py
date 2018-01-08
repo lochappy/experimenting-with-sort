@@ -26,12 +26,21 @@ class GroundTruthDetections:
         return int(np.random.choice(2, 1, p=[1 - detect_prob, detect_prob]))
 
     '''returns the detected items positions or [] if no detection'''
-    def get_detected_items(self,frame):
+    def get_detected_items(self,frame, headShouder=False):
 
         #if self._do_detection() or frame == 0:
-        if frame%5 == 0:
-            return self.all_dets[self.all_dets[:, 1] == frame, 8:]
-            #return self.all_dets[self.all_dets[:, 1] == frame, 4:9]
+        if frame%3 == 0:
+            if headShouder:
+                returnedData = self.all_dets[self.all_dets[:, 1] == frame, 4:8]
+                extendData = 0.5*np.abs(returnedData[:,-1] - returnedData[:,-3])
+                returnedData[:,0]  -= extendData
+                returnedData[:,-1] += 2*extendData
+                returnedData[:,-2] += extendData
+                print returnedData
+                return returnedData
+            else:
+                return self.all_dets[self.all_dets[:, 1] == frame, 8:]
+            
 
         else:
             return []
