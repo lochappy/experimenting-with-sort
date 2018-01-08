@@ -4,7 +4,8 @@ As implemented in https://github.com/abewley/sort but with some modifications
 
 from __future__ import print_function
 import numpy as np
-from kalman_tracker import KalmanBoxTracker
+#from kalman_tracker import KalmanBoxTracker
+from opencv_kalman_tracker import OpencvKalmanBoxTracker as KalmanBoxTracker
 from correlation_tracker import CorrelationTracker
 from data_association import associate_detections_to_trackers
 

@@ -28,8 +28,10 @@ class GroundTruthDetections:
     '''returns the detected items positions or [] if no detection'''
     def get_detected_items(self,frame):
 
-        if self._do_detection() or frame == 0:
+        #if self._do_detection() or frame == 0:
+        if frame%5 == 0:
             return self.all_dets[self.all_dets[:, 1] == frame, 8:]
+            #return self.all_dets[self.all_dets[:, 1] == frame, 4:9]
 
         else:
             return []
